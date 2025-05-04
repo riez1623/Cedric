@@ -8,14 +8,20 @@
 </head>
 <body>
 
+  <!-- Main Screen -->
   <div id="main-screen" class="centered-screen">
     <h1 class="alert-text">Cedric is 5 miles away!!</h1>
     <button id="chat-button">Chat with him</button>
   </div>
 
+  <!-- Hacked Screen -->
   <div id="hacked-screen" class="hidden">
+    <div class="matrix-background"></div>
     <div class="matrix-text" id="matrix-output"></div>
   </div>
+
+  <audio id="typing-sound" src="typing-sound.mp3" preload="auto"></audio>
+  <audio id="hacking-sound" src="hacking-sound.mp3" preload="auto"></audio>
 
   <script src="script.js"></script>
 </body>
