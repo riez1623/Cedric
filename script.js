@@ -17,24 +17,63 @@ document.addEventListener("DOMContentLoaded", () => {
     "WELCOME USER"
   ];
 
+  const hackerWords = [
+    "ROOT", "HACKER", "BYPASS", "ENCRYPTED", "SYSTEM ERROR", "ERROR 404", 
+    "DECRYPTING", "REBOOT", "ACCESS DENIED", "PASSWORD REQUIRED", "EXECUTING", 
+    "UNLOCKING", "OVERRIDE", "SCAN COMPLETE", "SECURITY BREACH"
+  ];
+
+  // Function to type text one character at a time
+  function typeWriterEffect(text, index, callback) {
+    if (index < text.length) {
+      matrixOutput.innerHTML += text.charAt(index);
+      index++;
+      setTimeout(() => typeWriterEffect(text, index, callback), 50);
+    } else {
+      callback();
+    }
+  }
+
+  // Function to generate random hacker-like words
+  function generateHackerWords() {
+    setInterval(() => {
+      const randomWord = hackerWords[Math.floor(Math.random() * hackerWords.length)];
+      matrixOutput.innerHTML += randomWord + " ";
+    }, 400); // Adding a word every 400ms
+  }
+
   chatButton.addEventListener("click", () => {
     // Hide the main screen and show the hacked screen
     mainScreen.classList.add("hidden");
     hackedScreen.classList.remove("hidden");
 
-    // Begin fake hacking animation
+    // Force fullscreen mode
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) { // Chrome and Safari
+      document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+      document.documentElement.msRequestFullscreen();
+    }
+
+    // Start the fake hack animation
     let index = 0;
 
     const interval = setInterval(() => {
       if (index >= matrixWords.length) {
         clearInterval(interval);
+        generateHackerWords(); // Start generating random words after "WELCOME USER"
         return;
       }
 
-      // Simulate typing a line with a little randomness
+      // Type each line with a delay
       const line = matrixWords[index];
-      matrixOutput.innerHTML += line + "\n";
+      typeWriterEffect(line, 0, () => {
+        matrixOutput.innerHTML += "\n"; // Add line break after each message
+      });
       index++;
-    }, 600);
+    }, 1200); // Adjust time for each line to appear
   });
 });
