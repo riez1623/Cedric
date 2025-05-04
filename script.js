@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "CONNECTED TO CEDRICNET",
     "DATA STREAM OPENED",
     "DOWNLOADING LOCATION",
-    "CEDRIC IS WATCHING",
+    "CEDRIC IS WATCHING.",
     "///// SYSTEM OVERRIDE /////",
     "TRACE INITIATED",
     "WELCOME USER"
@@ -23,12 +23,16 @@ document.addEventListener("DOMContentLoaded", () => {
     "UNLOCKING", "OVERRIDE", "SCAN COMPLETE", "SECURITY BREACH"
   ];
 
+  const typingSound = document.getElementById("typing-sound");
+  const hackingSound = document.getElementById("hacking-sound");
+
   // Function to type text one character at a time
   function typeWriterEffect(text, index, callback) {
     if (index < text.length) {
       matrixOutput.innerHTML += text.charAt(index);
+      typingSound.play(); // Play typing sound on each character
       index++;
-      setTimeout(() => typeWriterEffect(text, index, callback), 50);
+      setTimeout(() => typeWriterEffect(text, index, callback), 30); // Faster typing speed
     } else {
       callback();
     }
@@ -58,6 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
       document.documentElement.msRequestFullscreen();
     }
 
+    // Play hacking sound
+    hackingSound.play();
+
     // Start the fake hack animation
     let index = 0;
 
@@ -74,6 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
         matrixOutput.innerHTML += "\n"; // Add line break after each message
       });
       index++;
-    }, 1200); // Adjust time for each line to appear
+    }, 800); // Adjust time for each line to appear
   });
 });
