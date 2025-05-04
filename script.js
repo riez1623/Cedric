@@ -23,14 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "UNLOCKING", "OVERRIDE", "SCAN COMPLETE", "SECURITY BREACH"
   ];
 
-  const typingSound = document.getElementById("typing-sound");
-  const hackingSound = document.getElementById("hacking-sound");
-
   // Function to type text one character at a time
   function typeWriterEffect(text, index, callback) {
     if (index < text.length) {
       matrixOutput.innerHTML += text.charAt(index);
-      typingSound.play(); // Play typing sound on each character
       index++;
       setTimeout(() => typeWriterEffect(text, index, callback), 30); // Faster typing speed
     } else {
@@ -61,9 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
       document.documentElement.msRequestFullscreen();
     }
-
-    // Play hacking sound
-    hackingSound.play();
 
     // Start the fake hack animation
     let index = 0;
