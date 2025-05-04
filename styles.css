@@ -1,0 +1,60 @@
+/* General reset */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hide elements */
+.hidden {
+  display: none;
+}
+
+/* Centered screen layout */
+.centered-screen {
+  text-align: center;
+}
+
+/* Main screen styling */
+.alert-text {
+  font-size: 2em;
+  color: red;
+  margin-bottom: 20px;
+}
+
+#chat-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #00ff00;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#chat-button:hover {
+  background-color: #00cc00;
+}
+
+/* Hacked screen styling */
+#hacked-screen {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.matrix-text {
+  color: #00ff00;
+  font-size: 1em;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
