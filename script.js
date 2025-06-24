@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "ACCESS GRANTED",
     "INITIALIZING...",
     "LOADING MODULE...",
-    "CONNECTED TO CEDRICNET",
+    "CONNECTED TO FREE RABAX",
     "DATA STREAM OPENED",
     "DOWNLOADING LOCATION",
     "CEDRIC IS WATCHING.",
