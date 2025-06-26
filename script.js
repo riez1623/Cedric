@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "DOWNLOADING LOCATION",
     "CEDRIC IS WATCHING.",
     "///// SYSTEM OVERRIDE /////",
-    "TRACE INITIATED",
     "WELCOME USER"
   ];
 
