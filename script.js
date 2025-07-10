@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "CONNECTED TO FREE RABAX",
     "DATA STREAM OPENED",
     "DOWNLOADING LOCATION",
-    "CEDRIC IS WATCHING.",
+    "ACCESSING IP ADDRESS",
     "///// SYSTEM OVERRIDE /////",
-    "WELCOME USER"
+    "USER RECOGNIZED"
   ];
 
   const hackerWords = [
