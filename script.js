@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "DOWNLOADING LOCATION",
     "ACCESSING IP ADDRESS",
     "///// SYSTEM OVERRIDE /////",
-    "USER RECOGNIZED"
+    "/USER RECOGNIZED"
   ];
 
   const hackerWords = [
